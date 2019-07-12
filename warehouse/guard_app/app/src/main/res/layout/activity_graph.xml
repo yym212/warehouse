@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context=".Activity.Graph">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout4"
+        app:srlHeaderMaxDragRate="2.5"
+        app:srlEnableAutoLoadMore="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.scwang.smartrefresh.header.WaveSwipeHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="无人机基本信息"
+                android:layout_gravity="center_horizontal"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/qChart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@color/white"
+                />
+
+            <ListView
+                android:id="@+id/list"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </ListView>
+
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/txt1"
+                    android:text="编号"
+                    android:textSize="16sp"
+                    android:textColor="@color/color_gray_555"
+                    android:paddingLeft="40dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/stroke"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp" />
+
+                <TextView
+                    android:id="@+id/txt2"
+                    android:text="经度"
+                    android:textSize="16sp"
+                    android:textColor="@color/color_gray_555"
+                    android:paddingLeft="40dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/stroke"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp" />
+
+                <TextView
+                    android:id="@+id/txt3"
+                    android:text="纬度"
+                    android:textSize="16sp"
+                    android:textColor="@color/color_gray_555"
+                    android:paddingLeft="40dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/stroke"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp" />
+
+                <TextView
+                    android:id="@+id/txt4"
+                    android:text="高度"
+                    android:textSize="16sp"
+                    android:textColor="@color/color_gray_555"
+                    android:paddingLeft="40dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/stroke"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp" />
+
+            </LinearLayout>
+
+            -->
+
+
+        </LinearLayout>
+
+
+
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</LinearLayout>

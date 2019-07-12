@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.lineChart">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout5"
+        app:srlHeaderMaxDragRate="2.5"
+        app:srlEnableAutoLoadMore="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smartrefresh.header.WaveSwipeHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+
+</LinearLayout>

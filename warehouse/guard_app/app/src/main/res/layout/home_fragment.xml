@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout1"
+        app:srlHeaderMaxDragRate="2.5"
+        app:srlEnableAutoLoadMore="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smartrefresh.header.WaveSwipeHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/banner"
+                android:background="@drawable/banner"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/lin01"
+                    android:orientation="vertical"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="8dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:hardwareAccelerated="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="left"
+                        android:src="@mipmap/fly"/>
+
+                    <TextView
+                        android:text="目标信息"
+                        android:layout_gravity="center"
+                        android:textSize="20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/lin02"
+                    android:orientation="vertical"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="18dp"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="left"
+                        android:src="@mipmap/fly"/>
+
+                    <TextView
+                        android:text="目标信息"
+                        android:layout_gravity="center"
+                        android:textSize="20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/lin03"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="8dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="left"
+                        android:src="@mipmap/fly"/>
+
+                    <TextView
+                        android:text="目标信息"
+                        android:layout_gravity="center"
+                        android:textSize="20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/lin04"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="8dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="left"
+                        android:src="@mipmap/fly"/>
+
+                    <TextView
+                        android:text="目标信息"
+                        android:layout_gravity="center"
+                        android:textSize="20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</LinearLayout>
