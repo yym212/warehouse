@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">智能家居</string>
+    <string name="attention">关注设备</string>
+    <string name="close">取消关注</string>
+    <string name="history">历史报警温度</string>
+    <string name="tempV">温度值:</string>
+    <string name="temp"></string>
+    <string name="humidityV">湿度值:</string>
+    <string name="humidity"></string>
+    <string name="lightV">光照值:</string>
+    <string name="light"></string>
+    <string name="peopleV">人体红外探测:</string>
+    <string name="people">无人</string>
+    <string name="fs">风扇状态:</string>
+    <string name="fen">关</string>
+    <string name="pc">接收PC端的信息:</string>
+    <string name="sendPC">向PC端发送信息:</string>
+</resources>
