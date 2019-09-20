@@ -39,6 +39,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.lang.ref.WeakReference;
+import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -192,6 +193,9 @@ public class MainActivity extends AppCompatActivity {
                 case 6:
                     editText.setText("");
                     break;
+                case 7:
+                    Toast.makeText(MainActivity.this,"服务器已断开连接，正在请求重连",Toast.LENGTH_LONG).show();
+                    break;
             }
         }
     }
@@ -290,30 +294,35 @@ public class MainActivity extends AppCompatActivity {
 
             //向PC端发送消息
             case R.id.send:
-
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
                         try {
                             if (editText.getText()!=null && editText.getText().length() > 0){
                                 String value = editText.getText().toString();
-                                byte[] bytes = value.getBytes("utf-8");
-                                clientThread.dataOutputStream = new DataOutputStream(clientThread.outputStream);
-                                clientThread.dataOutputStream.write(bytes,0,bytes.length);
-                                clientThread.dataOutputStream.flush();
-                                message = new Message();
-                                message.what = 6;
-                                message.obj = value;
-                                handler.sendMessage(message);
+                                if (clientThread.outputStream!=null) {
+                                        clientThread.outputStream = clientThread.socket.getOutputStream();
+                                        clientThread.outputStream.write(value.getBytes("utf-8"));
+                                        clientThread.outputStream.flush();
+                                        message = new Message();
+                                        message.what = 6;
+                                        message.obj = value;
+                                        handler.sendMessage(message);
+                                }
                             }
 
                         } catch (UnsupportedEncodingException e) {
                             e.printStackTrace();
                         }catch (IOException e) {
                             e.printStackTrace();
+                            message = new Message();
+                            message.what = 7;
+                            handler.sendMessage(message);
+                            System.out.println("服务器已断开连接。。。");
                         }
                     }
                 }).start();
+
                 break;
         }
     }

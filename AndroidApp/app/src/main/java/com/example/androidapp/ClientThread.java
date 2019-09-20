@@ -13,8 +13,8 @@ import java.net.Socket;
 public class ClientThread implements Runnable{
     public Handler handler;
     public OutputStream outputStream;
-    public DataOutputStream dataOutputStream;
-    private static final String host = "192.168.10.105";
+    public Socket socket = null;
+    private static final String host = "192.168.10.101";
     private static final int port = 8888;
     ClientThread(Handler handler){
         this.handler = handler;
@@ -24,7 +24,7 @@ public class ClientThread implements Runnable{
     public void run() {
         while (true){
             try {
-                Socket socket = new Socket(host,port);
+                socket = new Socket(host,port);
                 InputStream in = socket.getInputStream();
                 outputStream = socket.getOutputStream();
                 byte[] bytes = new byte[1024];
@@ -35,10 +35,16 @@ public class ClientThread implements Runnable{
                      message.what = 5;
                      message.obj = content;
                      handler.sendMessage(message);
-                     dataOutputStream = new DataOutputStream(outputStream);
                  }
+
+                socket.shutdownOutput();
+
+                Message message = new Message();
+                message.what = 7;
+                handler.sendMessage(message);
+
             } catch (IOException e) {
-                System.out.println("正在重连....");
+                System.out.println("正在请求重新连接");
                 e.printStackTrace();
             }
         }
